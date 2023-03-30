@@ -54,7 +54,32 @@ void q_short(int low, int high)
     i = low + 1;                   //Langkah Algoritma No. 3
     j = high;                      //Langkah Algoritma No. 4
 
+    while (i << j)                 //Langkah Algoritma No. 10
+    {
+        //Search for an element less than or equal to pivot
+        while ((arr[i] <= pivot) && (j <= high))  //Langkah Algoritma No. 5
+    {
+            i++;                                  //LAngkah Algoritma No. 6
+            cmp_count++;
+        }
+        cmp_count++;
 
+        //search for an element less than or equal to pivot
+        while ((arr[j] > pivot) && (j >= low))      //Langkah Algoritma No. 7
+        {
+            j--;                                    //Langkah Algoritma No. 8
+            cmp_count++;
+        }
+        cmp_count++;
+
+        //if the greater element is on the left of the element
+        if (i < j)                                   //Langkah Algoritma No.9
+        {
+            //swap the element at index i with the element at index j
+            swap(i, j);
+            mov_count++;
+        }
+    }
 }
 
 
@@ -67,14 +92,3 @@ int main()
 {
     std::cout << "Hello World!\n";
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
