@@ -6,6 +6,7 @@ int arr[20];                 // Array of Integers to hold value
 int cmp_count = 0;          // number of comparations
 int mov_count = 0;     // number of data movements
 
+void input()
 
 
 int main()
